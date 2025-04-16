@@ -2,6 +2,7 @@ const { ldapClient, BASE_DN } = require('../ldap/ldapClient');
 const { DOMParser } = require('xmldom');
 const xpath = require('xpath');
 const fs = require('fs');
+const ldap = require('ldapjs');
 const path = require('path');
 
 function parseXML(arquivo) {
