@@ -12,7 +12,7 @@ function conectarLDAP() {
       if (err) {
         return reject(`Erro ao conectar ao LDAP: ${err.message}`);
       }
-      resolve('🔐 Conexão LDAP estabelecida com sucesso.');
+      resolve('Conexão LDAP estabelecida com sucesso.');
     });
   });
 }

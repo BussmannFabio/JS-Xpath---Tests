@@ -47,7 +47,7 @@ async function iniciar() {
     console.error(`Erro crítico: ${error}`);
   } finally {
     ldapClient.unbind(() => {
-      console.log('📤 Conexão LDAP encerrada.');
+      console.log(' Conexão LDAP encerrada.');
     });
   }
 }

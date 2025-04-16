@@ -16,7 +16,7 @@ async function adicionarGrupo(node) {
   const descricao = xpath.select1('add-attr[@attr-name="Descricao"]/value/text()', node)?.data.trim();
 
   if (!grupoId) {
-    console.error('❌ Identificador de grupo não encontrado!');
+    console.error('Identificador de grupo não encontrado!');
     return;
   }
 
@@ -29,7 +29,7 @@ async function adicionarGrupo(node) {
         member: [`cn=${grupoId},ou=grupos,${BASE_DN}`]
       }, (err) => {
         if (err) return reject(`Erro ao criar grupo ${grupoId}: ${err.message}`);
-        console.log(`✅ Grupo ${grupoId} criado!`);
+        console.log(`Grupo ${grupoId} criado!`);
         resolve();
       });
     });
@@ -44,7 +44,7 @@ async function adicionarUsuario(node) {
   const telefone = xpath.select1('add-attr[@attr-name="Telefone"]/value/text()', node)?.data.replace(/\D/g, '') || '';
 
   if (!login) {
-    console.error('❌ Login do usuário não encontrado!');
+    console.error('Login do usuário não encontrado!');
     return;
   }
 
@@ -58,7 +58,7 @@ async function adicionarUsuario(node) {
         telephoneNumber: telefone
       }, (err) => {
         if (err) return reject(`Erro ao criar usuário ${login}: ${err.message}`);
-        console.log(`✅ Usuário ${login} criado!`);
+        console.log(`Usuário ${login} criado!`);
         resolve();
       });
     });
@@ -73,7 +73,7 @@ async function modificarUsuario(node) {
   const adicionar = xpath.select('modify-attr/add-value/value/text()', node).map(n => n.data.trim());
 
   if (!login) {
-    console.error('❌ Login do usuário para modificação não encontrado!');
+    console.error(' Login do usuário para modificação não encontrado!');
     return;
   }
 
@@ -94,7 +94,7 @@ async function modificarUsuario(node) {
           }),
           (err) => {
             if (err) return reject(`Erro ao remover usuário ${login} do grupo ${grupo}: ${err.message}`);
-            console.log(`✅ Usuário ${login} removido do grupo ${grupo}!`);
+            console.log(`Usuário ${login} removido do grupo ${grupo}!`);
             resolve();
           }
         );
@@ -113,7 +113,7 @@ async function modificarUsuario(node) {
           }),
           (err) => {
             if (err) return reject(`Erro ao adicionar usuário ${login} ao grupo ${grupo}: ${err.message}`);
-            console.log(`✅ Usuário ${login} adicionado ao grupo ${grupo}!`);
+            console.log(`Usuário ${login} adicionado ao grupo ${grupo}!`);
             resolve();
           }
         );
