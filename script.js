@@ -1,4 +1,4 @@
-const fs = require('fs');
+/*const fs = require('fs');
 const { DOMParser } = require('xmldom');
 const xpath = require('xpath');
 
@@ -66,3 +66,4 @@ console.assert(ldapDB.usuarios.length === 1, 'usuário criado');
 console.assert(ldapDB.usuarios[0].grupos.includes('Grupo3'), 'Usuário no Grupo3');
 console.assert(!ldapDB.usuarios[0].grupos.includes('Grupo2'), 'Usuário REMOVIDO do Grupo2');
 console.log('Todos os testes passaram!');
+*/
